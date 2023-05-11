@@ -20,6 +20,8 @@ def generate_dataframe_stack(question, num_possible_answers=1):
     -------
     df : pandas dataframe
         A dataframe with the answers to the query
+    num_possible_answers : int
+        The number of possible answers to the query
     """
 
     # Generate question
@@ -49,10 +51,10 @@ def generate_dataframe_stack(question, num_possible_answers=1):
     return df
 
 if __name__ == "__main__":
-    # Let's first get some files that we want to query
+    # Let's first initialize an in memory document store
     document_store = InMemoryDocumentStore(use_bm25=True)
 
-    # Let's first get some files that we want to query
+    # Let's set up the directory where we can save our documents to
     doc_dir = "data/build_your_first_question_answering_system"
 
     # Here are some documents that we want to query with our question answering system
